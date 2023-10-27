@@ -2,7 +2,6 @@ import { StatusBar } from "expo-status-bar";
 import { Text, View } from "react-native";
 import ButtonGeral from "../../components/ButtonGeral";
 import TextInputs from  "../../components/Inputs";
-import Texts from "../../components/Texts";
 
 import BouncyCheckbox from "react-native-bouncy-checkbox";
 
