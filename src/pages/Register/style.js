@@ -27,5 +27,11 @@ export default StyleSheet.create({
   checkView: {
     flex: 1,
     width: '75%',
+  },
+  txtTitulo: {
+    fontSize: 48,
+    fontWeight: 'bold',
+    color: '#fff'
   }
+
 });

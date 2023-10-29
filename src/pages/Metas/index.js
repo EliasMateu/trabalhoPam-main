@@ -58,6 +58,7 @@ export default function Metas({ navigation }) {
                     <StatusBar style='auto' />
                 </View>
                 <Button
+                    type={"primary"}
                     onPress={openLoadingPage}
                     text={"Avançar"} />
             </View>

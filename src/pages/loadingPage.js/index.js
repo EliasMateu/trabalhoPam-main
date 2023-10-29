@@ -40,6 +40,7 @@ export default function LoadingPage({ route, navigation }) {
                         Sucesso!
                     </Text>
                     <Button
+                        type={"primary"}
                         onPress={openHome}
                         text={"Avançar"} />
                 </View>

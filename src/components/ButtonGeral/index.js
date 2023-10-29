@@ -1,16 +1,13 @@
-import { ActivityIndicator, Text, TouchableOpacity } from 'react-native';
-import { Antdesign } from "@expo/vector-icons";
-import styles from './styles';
+import { StyleSheet, activityIndicator, Text, TouchableOpacity } from 'react-native';
 
-export default function Button({ onPress,
+export default function ButtonGeral({ onPress,
     text,
-    icon,
     disabled,
-    isLoading }) {
+    isLoading,
+    type }) {
     const buttonVar = {
         active: {
             button: {
-                backgroundColor: "#00563B",
                 width: 231,
                 padding: 16,
                 alignItems: "center",
@@ -28,7 +25,6 @@ export default function Button({ onPress,
         },
         inactive: {
             button: {
-                backgroundColor: "#565656",
                 width: 231,
                 margin: 8,
                 padding: 16,
@@ -36,6 +32,7 @@ export default function Button({ onPress,
                 borderWidth: 2,
                 borderColor: "black",
                 borderRadius: 90,
+                flexDirection: 'row',
             },
             text: {
                 color: "#fff",
@@ -46,10 +43,26 @@ export default function Button({ onPress,
         },
     }
     const buttonStyle = disabled ? buttonVar.inactive : buttonVar.active;
+
+    let selected = '';
+
+    switch (type) {
+        case "primary":
+            selected = styles.primary;
+            break;
+        case "secondary":
+            selected = styles.secondary;
+        default:
+            selected = styles.inactive;
+            break;
+    }
+
+    const buttonType = selected;
+
     return (
         <TouchableOpacity
             onPress={onPress}
-            disabled={false} style={[styles.button, buttonStyle.button]}>
+            disabled={false} style={[buttonType, buttonStyle.button]}>
             {isLoading == true ? (
                 <ActivityIndicator color={'#000'} />
             ) : (
@@ -62,3 +75,15 @@ export default function Button({ onPress,
         </TouchableOpacity>
     )
 }
+
+const styles = StyleSheet.create({
+    primary: {
+        backgroundColor: "#00563B",
+    },
+    secondary: {
+        backgroundColor: "#9BCD31",
+    },
+    inactive: {
+        backgroundColor: "#565656",
+    }
+});

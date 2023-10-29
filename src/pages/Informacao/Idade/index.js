@@ -23,6 +23,7 @@ export default function Idade({ route, navigation }) {
             <View>
                 <View>
                     <Button
+                    type={"primary"}
                     onPress={openFotoPerfil}
                     text={"Avançar"} />
                 </View>

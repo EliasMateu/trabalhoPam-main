@@ -33,6 +33,7 @@ export default function FotoPerfil({ route, navigation }) {
             <View>
                 <View>
                     <Button
+                    type={"primary"}
                     onPress={openMetas}
                     text={"Avançar"} />
                 </View>

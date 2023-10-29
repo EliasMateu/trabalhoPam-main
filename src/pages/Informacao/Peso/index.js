@@ -25,6 +25,7 @@ export default function Peso({ route, navigation }) {
             <View>
                 <View style={{marginTop: 32}}>
                     <Button
+                    type={"primary"}
                     onPress={openAltura}
                     text={"Avançar"} />
                 </View>

@@ -1,12 +1,15 @@
 import { StatusBar } from "expo-status-bar";
 import { Text, TouchableOpacity, View, Image } from "react-native";
-import ButtonGeral from "../../components/ButtonGeral/index";
+import ButtonGeral from "../../components/ButtonGeral";
 
 import style from "./style";
 
 export default function Entrar({ route, navigation }) {
   function openRegister(register) {
     navigation.navigate("Register", register);
+  }
+  function openHome(home) {
+    navigation.navigate("Home", home);
   }
   return (
     <View style={style.container}>
@@ -24,12 +27,14 @@ export default function Entrar({ route, navigation }) {
           medida
         </Text>
         <ButtonGeral
-          onPress={"#"}
-          text="Entrar" />
+          onPress={openHome}
+          text="Entrar" 
+          type={"primary"}/>
         <Text style={{ color: "#fff", fontSize: 20 }}>ou</Text>
         <ButtonGeral
           onPress={openRegister}
-          text="Cadastrar-se" />
+          text="Cadastrar-se" 
+          type={"primary"}/>
       </View>
       <StatusBar style="auto" />
     </View>

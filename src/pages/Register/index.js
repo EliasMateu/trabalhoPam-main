@@ -1,7 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import { Text, View } from "react-native";
 import ButtonGeral from "../../components/ButtonGeral";
-import TextInputs from  "../../components/Inputs";
+import Txtinput from "../../components/TxtInput";
 
 import BouncyCheckbox from "react-native-bouncy-checkbox";
 
@@ -15,11 +15,11 @@ export default function Register({ route, navigation }) {
     <View style={style.container}>
       <View>
         <View style={{ alignItems: "center" }}>
-          
-        </View>
-        <Texts type={"Titulos"}>
+          <Text style={style.txtTitulo}>
             Criar conta
-          </Texts>
+          </Text>
+        </View>
+
         <View
           style={{
             width: "80%",
@@ -33,22 +33,19 @@ export default function Register({ route, navigation }) {
             alignItems: "center",
             paddingBottom: 30,
             paddingTop: 30,
-          }}
-        >
+          }}>
           <View>
-          <TextInputs placeholder={"Nome Completo"}/>
+            <Txtinput placeholder={"Nome Completo"} type={"primary"} />
           </View>
           <View>
-          <TextInputs placeholder={"E-mail"}/>
+            <Txtinput placeholder={"Nome e-mail"} type={"primary"} />
           </View>
           <View>
-          <TextInputs placeholder={"Celular"}/>
+            <Txtinput placeholder={"Celular"} type={"primary"} />
           </View>
           <View>
-          <TextInputs placeholder={"Senha"}/>
+            <Txtinput placeholder={"Senha"} type={"primary"} />
           </View>
-          
-          
         </View>
         <View
           style={{
@@ -56,24 +53,25 @@ export default function Register({ route, navigation }) {
             height: 2,
             backgroundColor: "#fff",
             alignSelf: "center",
-          }}
-        ></View>
+          }}>
+        </View>
         <View style={style.checkView}>
           <BouncyCheckbox
-            onPress={() => {}}
+            onPress={() => { }}
             text="Li os termos e aceito as condições de uso do aplicativo"
           />
         </View>
         <View style={style.checkView}>
           <BouncyCheckbox
-            onPress={() => {}}
+            onPress={() => { }}
             text="Aceito receber promoções e novidades no e-mail"
           />
         </View>
         <View style={{ alignItems: "center" }}>
           <ButtonGeral
-          onPress={openInformacao}
-          text={"Avançar"} />
+            onPress={openInformacao}
+            text={"Avançar"}
+            type={"primary"} />
         </View>
       </View>
       <StatusBar style="auto" />
