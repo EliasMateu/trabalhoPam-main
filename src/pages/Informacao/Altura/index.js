@@ -11,7 +11,7 @@ export default function Altura({ route, navigation }) {
         navigation.navigate("Idade", idade);
     }
 
-    function toggleAlturaList() {
+    function openalturalist() {
         setAlturaVisible(!alturaVisible);
     }
 
@@ -21,7 +21,7 @@ export default function Altura({ route, navigation }) {
                 <Text style={style.textPrin}>
                     Informe a sua altura:
                 </Text>
-                <TouchableOpacity onPress={toggleAlturaList} style={style.btnInformacao}>
+                <TouchableOpacity onPress={openalturalist} style={style.btnInformacao}>
                     <Text style={{ fontSize: 20, fontWeight: 'bold' }}>
                         ALTURA
                     </Text>
@@ -30,7 +30,7 @@ export default function Altura({ route, navigation }) {
 
             {alturaVisible && (
                 <ScrollView style={{ maxHeight: 150 }}>
-                    <PickerList />
+                    <PickerList type={"altura"}/>
                 </ScrollView>
             )}
 

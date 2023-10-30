@@ -1,12 +1,19 @@
 import { StatusBar } from "expo-status-bar";
-import { Text, TouchableOpacity, View } from "react-native";
+import { Text, TouchableOpacity, View, ScrollView } from "react-native";
 import Button from "../../../components/ButtonGeral";
-
+import PickerList from "../../../components/Picker";
 import style from "./style";
+import { useState } from "react";
 
 export default function Idade({ route, navigation }) {
+    const [idadeVisible, setIdadeVisible] = useState(false);
+
     function openFotoPerfil(fotoPerfil) {
         navigation.navigate("FotoPerfil", fotoPerfil);
+    }
+
+    function openIdadeList() {
+        setIdadeVisible(!idadeVisible);
     }
     return (
         <View style={style.container}>
@@ -14,12 +21,18 @@ export default function Idade({ route, navigation }) {
                 <Text style={style.textPrin}>
                     Informe a sua Idade:
                 </Text>
-                <TouchableOpacity style={style.btnInformacao}>
-                    <Text style={{ fontSize: 20 }}>
+                <TouchableOpacity onPress={openIdadeList} style={style.btnInformacao}>
+                    <Text style={{ fontSize: 20, fontWeight: 'bold' }}>
                         IDADE
                     </Text>
                 </TouchableOpacity>
             </View>
+
+            {idadeVisible && (
+                <ScrollView style={{ maxHeight: 150 }}>
+                    <PickerList type={"idade"}/>
+                </ScrollView>
+            )}
             <View>
                 <View>
                     <Button

@@ -1,11 +1,26 @@
-import {View, FlatList, Text} from "react-native";
+import { View, FlatList, Text } from "react-native";
 
-export default function PickerList({}){
-
+export default function PickerList({ type }) {
   const data = [];
-  for (let i = 0; i < 300; i++) {
-    const value = (i / 100).toFixed(2);
-    data.push(`${value} cm`);
+
+  switch (type) {
+    case "altura":
+      for (let i = 0; i <= 300; i++) {
+        const valor = (i / 100).toFixed(2);
+        data.push(`${valor} m`);
+      }
+      break;
+    case "peso":
+      for(let i =0; i <= 180; i++) {
+        data.push(`${i} kg`);
+      }
+      break;
+    case "idade":
+      for (let i = 0; i < 120; i++) {
+        data.push(`${i} anos`);
+      }
+    default:
+      break;
   }
   return (
     <View>
